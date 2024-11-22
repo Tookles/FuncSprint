@@ -1,5 +1,6 @@
 using FluentAssertions;
 using FuncSprint;
+using Microsoft.VisualStudio.TestPlatform.Utilities;
 
 namespace FuncTests
 {
@@ -75,5 +76,39 @@ namespace FuncTests
                 "neil.hughes@walkingoncustard.com"
             });
         }
+
+
+
+        [Test]
+        public void SquaredNumsTest()
+        {
+            List<int> inputList = [1, 2, 3];
+
+            Exercise002.SquaredNums(inputList);
+
+            inputList.Should().BeEquivalentTo(new List<int>() { 1, 4, 9 }); 
+            
+        }
+
+        [Test]
+        public void IndexError() 
+         {
+            
+            var input = new List<string>
+            {
+                "a.cm",
+                "richard.neat@northcoders.com",
+                "mario@plumbing.it",
+            };
+
+            Action testThrow = () => Exercise002.FilterEmails(input); 
+
+            testThrow.Should().Throw<ArgumentOutOfRangeException>();
+
+
+        }
+
+
     }
+
 }

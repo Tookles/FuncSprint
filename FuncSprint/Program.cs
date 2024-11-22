@@ -41,29 +41,52 @@
             //    Console.WriteLine(i);
             //} 
 
+            //List<string> emailList = new List<string>
+            //{
+            //    "alice.yang@northcoders.com",
+            //    "richard.neat@northcoders.com",
+            //    "mario@plumbing.it",
+            //    "link@hyrule.co.uk",
+            //    "shrek@duloc.com",
+            //    "neil.hughes@walkingoncustard.com", 
+            //    "csharp@microsoft.cs",
+            //    "ziggy@spidersfrommars.co.uk",
+            //    "lemmy@motorhead.co,uk",
+            //    "me@myhouse.sleep"
+            //};
+
+            //var filteredList = Exercise002.FilterEmails(emailList);
+
+            //foreach ( var key in filteredList.Keys )
+            //{
+            //    Console.WriteLine(key);
+            //    foreach (var email in filteredList[key])
+            //    {
+            //        Console.WriteLine(email);
+            //    }
+            //}
+
             List<string> emailList = new List<string>
             {
                 "alice.yang@northcoders.com",
                 "richard.neat@northcoders.com",
                 "mario@plumbing.it",
-                "link@hyrule.co.uk",
+                "test",
                 "shrek@duloc.com",
-                "neil.hughes@walkingoncustard.com", 
-                "csharp@microsoft.cs",
+                "neil.hughes@walkingoncustard.com",
+                "hell",
                 "ziggy@spidersfrommars.co.uk",
                 "lemmy@motorhead.co,uk",
-                "me@myhouse.sleep"
+                "two"
             };
 
-            var filteredList = Exercise002.FilterEmails(emailList);
+            ListManager listManager = new ListManager(emailList);
 
-            foreach ( var key in filteredList.Keys )
+            List<string> returnList = listManager.FilterMethod();
+
+            foreach (string s in returnList)
             {
-                Console.WriteLine(key);
-                foreach (var email in filteredList[key])
-                {
-                    Console.WriteLine(email);
-                }
+                Console.WriteLine(s);
             }
 
         }
