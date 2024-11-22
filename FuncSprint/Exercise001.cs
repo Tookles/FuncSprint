@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Intrinsics.Arm;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,5 +16,7 @@ namespace FuncSprint
         public static Func<int, int> AddTen = num => num + 10;
 
         public static Predicate<string> GrammarCheck = str => str[0] == 'A' && str[^1] == '!'; 
+
+        public static Func<string, string, int> SumIndices = (s1, s2) => s1.IndexOf('a') + s2.IndexOf("e");
     }
 }

@@ -12,17 +12,19 @@
 
             //numbers.Select(x => Exercise001.AddTen(x)).ToList().ForEach(Console.WriteLine);
 
-            List<string> words = new List<string>
-            {
-                "Amazing!",
-                "apple!",
-                "Awesome!",
-                "Artichoke"
-            }; 
+            //List<string> words = new List<string>
+            //{
+            //    "Amazing!",
+            //    "apple!",
+            //    "Awesome!",
+            //    "Artichoke"
+            //}; 
 
-            words.Select(x => Exercise001.GrammarCheck(x)).ToList().ForEach(Console.WriteLine);
+            //words.Select(x => Exercise001.GrammarCheck(x)).ToList().ForEach(Console.WriteLine);
 
+            Console.WriteLine(Exercise001.SumIndices("start", "pale"));
 
+            Console.WriteLine(EmailCheck.CheckValidEmail("rachel@northcoders.co.uk"));
 
         }
     }
