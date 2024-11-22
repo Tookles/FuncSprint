@@ -48,5 +48,32 @@ namespace FuncTests
 
             EmailCheck.CheckValidEmail(input).Should().Be("Email domain and user name invalid, please check your input");
         }
+
+        [Test]
+        public void GetEmailList_ShouldReturnCorrectEmails()
+        {
+            var input = new List<string>
+            {
+                "alice.yang@northcoders.com",
+                "richard.neat@northcoders.com",
+                "mario@plumbing.it",
+                "link@hyrule.co.uk",
+                "shrek@duloc.com",
+                "neil.hughes@walkingoncustard.com",
+                "csharp@microsoft.cs",
+                "ziggy@spidersfrommars.co.uk",
+                "lemmy@motorhead.co,uk",
+                "me@myhouse.sleep"
+            };
+            Dictionary<string, List<string>> emailList = Exercise002.FilterEmails(input);
+
+            emailList[".com"].Should().BeEquivalentTo(new List<string>
+            {
+                "alice.yang@northcoders.com",
+                "richard.neat@northcoders.com",
+                "shrek@duloc.com",
+                "neil.hughes@walkingoncustard.com"
+            });
+        }
     }
 }

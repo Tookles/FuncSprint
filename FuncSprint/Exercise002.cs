@@ -36,11 +36,22 @@ namespace FuncSprint
 
         // with action chained to action?? but does not change the intList?  
         public static Action<List<int>> PrintSquareNums2 = (list) => { SquaredNums(list); PrintNums(list); };
-        
-        //public static Dictionary<string, List<string>> FilterEmails(List<string> emails)
-        //{
 
-        //}
+        public static Dictionary<string, List<string>> FilterEmails(List<string> emails)
+        {
+            Dictionary<string, List<string>> result = new Dictionary<string, List<string>>();
+
+            List<string> list1 = emails.Where(x => x.Substring(x.Length - 6) == ".co.uk").ToList();
+            result.Add(".co.uk", list1);
+
+            List<string> list2 = emails.Where(x => x.Substring(x.Length - 4) == ".com").ToList();
+            result.Add(".com", list2);
+
+            List<string> list3 = emails.Where(x => x.Substring(x.Length - 4) != ".com" && x.Substring(x.Length - 6) != ".co.uk").ToList();
+            result.Add("invalid", list3);
+
+            return result;
+        }
 
 
     }

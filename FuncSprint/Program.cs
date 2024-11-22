@@ -30,16 +30,41 @@
 
             //Exercise002.PrintCoolPeoeple(testList);
 
-            List<int> myInts = new List<int>() { 1, 2, 3 };
+            //List<int> myInts = new List<int>() { 1, 2, 3 };
 
-            //Exercise002.PrintSquareNums(myInts);
+            ////Exercise002.PrintSquareNums(myInts);
 
-            Exercise002.PrintSquareNums2(myInts);
+            //Exercise002.PrintSquareNums2(myInts);
 
             //foreach (int i in myInts)
             //{
             //    Console.WriteLine(i);
             //} 
+
+            List<string> emailList = new List<string>
+            {
+                "alice.yang@northcoders.com",
+                "richard.neat@northcoders.com",
+                "mario@plumbing.it",
+                "link@hyrule.co.uk",
+                "shrek@duloc.com",
+                "neil.hughes@walkingoncustard.com", 
+                "csharp@microsoft.cs",
+                "ziggy@spidersfrommars.co.uk",
+                "lemmy@motorhead.co,uk",
+                "me@myhouse.sleep"
+            };
+
+            var filteredList = Exercise002.FilterEmails(emailList);
+
+            foreach ( var key in filteredList.Keys )
+            {
+                Console.WriteLine(key);
+                foreach (var email in filteredList[key])
+                {
+                    Console.WriteLine(email);
+                }
+            }
 
         }
     }
