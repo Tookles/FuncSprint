@@ -30,18 +30,16 @@
 
             //Exercise002.PrintCoolPeoeple(testList);
 
-            List<int> myInts = new List<int>() { 1, 2, 3 }; 
+            List<int> myInts = new List<int>() { 1, 2, 3 };
 
             //Exercise002.PrintSquareNums(myInts);
 
             Exercise002.PrintSquareNums2(myInts);
 
-            foreach (int i in myInts)
-            {
-
-
-                Console.WriteLine(i);
-            } 
+            //foreach (int i in myInts)
+            //{
+            //    Console.WriteLine(i);
+            //} 
 
         }
     }

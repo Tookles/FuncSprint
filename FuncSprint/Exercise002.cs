@@ -19,22 +19,28 @@ namespace FuncSprint
 
         public static Action<List<string>> PrintCoolPeoeple = li => li.ForEach(Console.WriteLine);
 
-        public static Action<List<int>> SquaredNums = intList => intList.ForEach(x => x = x * x);
+        public static Action<List<int>> SquaredNums = intList =>
+        {
+            for (int i = 0; i < intList.Count; i++)
+            {
+                intList[i] = intList[i] * intList[i];
+            }
+        };
     
         public static Func<List<int>, List<int>> SquaredNumsReturn = intList => intList.Select(x => x = x * x).ToList();
 
-        public static Action<List<int>> PrintNums = intList => intList.ForEach(Console.WriteLine);
+        public static Action<List<int>> PrintNums = intList => intList.ForEach(x => Console.WriteLine(x));
 
         // with Function chained to action 
         public static Action<List<int>> PrintSquareNums = intList => PrintNums(SquaredNumsReturn(intList));
 
         // with action chained to action?? but does not change the intList?  
-        public static Action<List<int>> PrintSquareNums2 = intList =>
-        {
-            SquaredNums(intList);
-            PrintNums(intList);
-        };
+        public static Action<List<int>> PrintSquareNums2 = (list) => { SquaredNums(list); PrintNums(list); };
         
+        //public static Dictionary<string, List<string>> FilterEmails(List<string> emails)
+        //{
+
+        //}
 
 
     }
