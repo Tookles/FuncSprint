@@ -4,7 +4,26 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            //List<int> numbers = new List<int> { 4, 15, 55, 78, 12 };
+
+            //List<int> returnList = numbers.Select(x => Exercise001.AddTen(x)).ToList();
+
+            //returnList.ForEach(Console.WriteLine);
+
+            //numbers.Select(x => Exercise001.AddTen(x)).ToList().ForEach(Console.WriteLine);
+
+            List<string> words = new List<string>
+            {
+                "Amazing!",
+                "apple!",
+                "Awesome!",
+                "Artichoke"
+            }; 
+
+            words.Select(x => Exercise001.GrammarCheck(x)).ToList().ForEach(Console.WriteLine);
+
+
+
         }
     }
 }
