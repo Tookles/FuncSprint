@@ -22,9 +22,26 @@
 
             //words.Select(x => Exercise001.GrammarCheck(x)).ToList().ForEach(Console.WriteLine);
 
-            Console.WriteLine(Exercise001.SumIndices("start", "pale"));
+            //Console.WriteLine(Exercise001.SumIndices("start", "pale"));
 
-            Console.WriteLine(EmailCheck.CheckValidEmail("rachel@northcoders.co.uk"));
+            //Console.WriteLine(EmailCheck.CheckValidEmail("rachel@northcoders.co.uk"));
+
+            //List<string> testList = Exercise002.GetCoolPeople(); 
+
+            //Exercise002.PrintCoolPeoeple(testList);
+
+            List<int> myInts = new List<int>() { 1, 2, 3 }; 
+
+            //Exercise002.PrintSquareNums(myInts);
+
+            Exercise002.PrintSquareNums2(myInts);
+
+            foreach (int i in myInts)
+            {
+
+
+                Console.WriteLine(i);
+            } 
 
         }
     }
