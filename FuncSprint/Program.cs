@@ -66,28 +66,44 @@
             //    }
             //}
 
-            List<string> emailList = new List<string>
-            {
-                "alice.yang@northcoders.com",
-                "richard.neat@northcoders.com",
-                "mario@plumbing.it",
-                "test",
-                "shrek@duloc.com",
-                "neil.hughes@walkingoncustard.com",
-                "hell",
-                "ziggy@spidersfrommars.co.uk",
-                "lemmy@motorhead.co,uk",
-                "two"
+            //List<string> emailList = new List<string>
+            //{
+            //    "alice.yang@northcoders.com",
+            //    "richard.neat@northcoders.com",
+            //    "mario@plumbing.it",
+            //    "test",
+            //    "shrek@duloc.com",
+            //    "neil.hughes@walkingoncustard.com",
+            //    "hell",
+            //    "ziggy@spidersfrommars.co.uk",
+            //    "lemmy@motorhead.co,uk",
+            //    "two"
+            //};
+
+            //ListManager listManager = new ListManager(emailList);
+
+            //List<string> returnList = listManager.FilterMethod();
+
+            //foreach (string s in returnList)
+            //{
+            //    Console.WriteLine(s);
+            //}
+
+            List<Person> list = new List<Person>()
+            { 
+                new Person(18, "0123453"),
+                new Person(46, "45948525"),
+                new Person(35, "0192837")
             };
 
-            ListManager listManager = new ListManager(emailList);
+            ListSumCalculator<Person> calculator = new ListSumCalculator<Person>(list);
+            int sumAge = calculator.SumBy(p => p.Age); // in this case we want to sum by age
+            int sumPhone = calculator.SumBy(p => Int32.Parse(p.PhoneNumber)); // sum by phone number
+            int sumAgeAndPhone = calculator.SumBy(p => Int32.Parse(p.PhoneNumber) + p.Age);
 
-            List<string> returnList = listManager.FilterMethod();
-
-            foreach (string s in returnList)
-            {
-                Console.WriteLine(s);
-            }
+            Console.WriteLine(sumAge);
+            Console.WriteLine(sumPhone);
+            Console.WriteLine(sumAgeAndPhone);
 
         }
     }

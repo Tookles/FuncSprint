@@ -8,7 +8,6 @@ namespace FuncSprint
 {
     internal class ListManager
     {
-
         public List<string> InputList;
 
         public Predicate<string> HasLength = str => str.Length > 4; 
@@ -22,7 +21,5 @@ namespace FuncSprint
             List<string> Filtered = InputList.Where(str => HasLength(str)).ToList();
             return Filtered; 
         }
-
-
     }
 }
